@@ -54,14 +54,14 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('colegio', 'forge'),
-			'username'  => env('root', 'forge'),
-			'password'  => env('', ''),
+			'host'      => 'localhost',
+			'database'  => 'colegio',
+			'username'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-			'strict'    => false,
+                        'port'     => '3306'
 		],
 
 		'pgsql' => [
