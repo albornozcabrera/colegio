@@ -18,10 +18,6 @@ class CreateUsersTable extends Migration {
             $table->string('password', 60);
             $table->rememberToken();
 
-            $table->unsignedInteger('n_profile');
-            $table->foreign('n_profile')->references('n_profile_pk')->on('profiles');
-            $table->unsignedInteger('n_status');
-            $table->foreign('n_status')->references('n_status_pk')->on('status');
 
 
             $table->timestamps();

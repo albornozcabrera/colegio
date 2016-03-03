@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileTable extends Migration {
+class CreateProfilesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -16,6 +16,9 @@ class CreateProfileTable extends Migration {
 		{
 			$table->increments('n_profile_pk');
 			$table->string('c_description');
+            $table->unsignedInteger('n_status');
+            
+            
 			$table->timestamps();
 		});
 	}
@@ -27,7 +30,7 @@ class CreateProfileTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('profiles');
 	}
 
 }
