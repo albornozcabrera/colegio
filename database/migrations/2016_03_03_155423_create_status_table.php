@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileTable extends Migration {
+class CreateStatusTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateProfileTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('profiles', function(Blueprint $table)
+		Schema::create('status', function(Blueprint $table)
 		{
-			$table->increments('n_profile_pk');
-			$table->string('c_description');
+			$table->increments('n_status_pk');
+			$table->string('c_name');
 			$table->timestamps();
 		});
 	}
