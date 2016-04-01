@@ -1,3 +1,4 @@
+
 <?php namespace colegio\Entities;
 
 use Illuminate\Auth\Authenticatable;
