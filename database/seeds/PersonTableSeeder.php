@@ -23,6 +23,7 @@ class PersonTableSeeder extends Seeder {
                 'email'         =>$faker->email,
 			]);
 
+
         }   
     }
 
