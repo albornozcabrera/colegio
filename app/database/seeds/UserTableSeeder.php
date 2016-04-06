@@ -27,7 +27,7 @@ class UserTableSeeder extends Seeder{
 					'job_id'		=>	$faker->randomElement([1,2,3]),
 					'description'	=>	$faker->text(100),
 					'available'		=> 	true,
-					'slug'			=>	Str::slug($firstname - $lastname)
+					'slug'			=>	Str::slug($firstname . $lastname)
 				]);
 			}
 		}
