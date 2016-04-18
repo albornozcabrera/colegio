@@ -29,7 +29,7 @@ $env = $app->detectEnvironment(array(
 	//'local' => array('homestead'),
     //'local' => array('*.dev', gethostname()),
     //'production' => array('*.com', '*.net', 'www.somedomain.com')	
-    'local'	 => array('GITE-LS-BVALDEZ'),
+    'local'	 => array('GITE-LS-BALBORNOZ'),
 
 ));
 
