@@ -16,17 +16,28 @@
                 <li id="contacts"><?= HTML::link("core/contacts", "Contáctanos", array()) ?></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    @if (Session::has('login_error'))
-                        <a id="btnLogin" style="cursor: pointer; color: #E91E63;">
-                            <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
-                        </a> 
-                    @else    
-                        <a id="btnLogin" style="cursor: pointer; ">
-                            <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
-                        </a>                        
+                    @if (Auth::check())
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="cursor: pointer; color: #4CAF50;" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('logout') }}">Logout</a></li>
+                            </ul>
+                        </li>                       
+                    @else
+                        @if (Session::has('login_error'))
+                        <li>    
+                            <a id="btnLogin" style="cursor: pointer; color: #E91E63;">
+                                <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
+                            </a>
+                        </li>     
+                        @else
+                        <li>    
+                            <a id="btnLogin" style="cursor: pointer; ">
+                                <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
+                            </a>
+                        </li>      
+                        @endif                            
                     @endif
-                </li>
             </ul>
         </div>
     </div>

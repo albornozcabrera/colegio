@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+
 Route::get('core/principal', 'HomeController@indexPrincipal');
 Route::get('core/about', 'HomeController@indexAbout');
 Route::get('core/activity', 'HomeController@indexActivity');
@@ -34,4 +34,5 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 
 Route::post('login', ['as' => 'login', 'uses' => 'HomeController@login']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'HomeController@logout']);
 

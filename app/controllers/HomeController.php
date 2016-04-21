@@ -43,4 +43,10 @@ class HomeController extends BaseController {
 		return Redirect::back()->with('login_error', 1);
 
 	}
+	public function logout()
+	{
+		Session::flush();
+		return Redirect::route('home');
+
+	}	
 }
