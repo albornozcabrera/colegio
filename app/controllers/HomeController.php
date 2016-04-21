@@ -32,5 +32,15 @@ class HomeController extends BaseController {
 		return View::make('principal.contacts');
 
 	}
+	public function login()
+	{
+		$data = Input::only('email', 'password', 'remember');
+		$credentials = ['email'=>$data['email'], 'password'=>$data['password']];
 
+		if(Auth::attempt($credentials, $data['remember'])){
+			return Redirect::back();
+		}
+		return Redirect::back()->with('login_error', 1);
+
+	}
 }

@@ -32,3 +32,6 @@ Route::get('core/contacts', 'HomeController@indexContacts');
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
+
+Route::post('login', ['as' => 'login', 'uses' => 'HomeController@login']);
+
