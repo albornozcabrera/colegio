@@ -2,7 +2,9 @@
 
 namespace Colegio\Entities;
 
-class Profile extends \Eloquent {
-	protected $fillable = [];
+class Profile extends Entity {
 
+	public function user(){
+		return $this->hasOne(User::get_class());
+	}
 }

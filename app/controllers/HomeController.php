@@ -1,22 +1,19 @@
 <?php
 
+use Colegio\Repositories\ProfileRepo;
+
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+	protected $profileRepo;
+
+	public function __construct(ProfileRepo $profileRepo)
+	{
+		$this->profileRepo = $profileRepo;
+	}
 
 	public function index()
 	{
+<<<<<<< HEAD
 		return View::make('principal.principal');
 	}
 	public function indexPrincipal()
@@ -34,6 +31,9 @@ class HomeController extends BaseController {
 	public function indexContacts()
 	{
 		return View::make('principal.contacts');
+=======
+		return View::make('main/home');	
+>>>>>>> 32691e4aa6a63989672b4e1e5254374f13afc32b
 	}
 
 }

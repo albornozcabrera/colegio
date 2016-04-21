@@ -10,6 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::get('/', 'HomeController@index');
 Route::get('core/principal', 'HomeController@indexPrincipal');
 Route::get('core/about', 'HomeController@indexAbout');
@@ -22,3 +23,12 @@ Route::get('core/contacts', 'HomeController@indexContacts');
 //{
 //	return View::make('hello');
 //});
+
+
+// Route::get('/', function()
+// {
+// 	return View::make('hello');
+// });
+
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
