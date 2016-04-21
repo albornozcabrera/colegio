@@ -1,0 +1,15 @@
+.video {
+    padding-bottom: 69%;
+    position: relative;
+    width: 100%;
+}
+.video iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.hr {
+    border-bottom: 3px solid #62bfe6;
+}

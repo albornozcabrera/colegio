@@ -17,11 +17,23 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('principal.Master');
+		return View::make('principal.principal');
 	}
 	public function indexPrincipal()
 	{
 		return View::make('principal.principal');
+	}
+	public function indexAbout()
+	{
+		return View::make('principal.about');
+	}
+	public function indexActivity()
+	{
+		return View::make('principal.activity');
+	}
+	public function indexContacts()
+	{
+		return View::make('principal.contacts');
 	}
 
 }

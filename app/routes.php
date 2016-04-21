@@ -12,6 +12,9 @@
 */
 Route::get('/', 'HomeController@index');
 Route::get('core/principal', 'HomeController@indexPrincipal');
+Route::get('core/about', 'HomeController@indexAbout');
+Route::get('core/activity', 'HomeController@indexActivity');
+Route::get('core/contacts', 'HomeController@indexContacts');
 //Route::post('usuario/login', array('uses' => 'UsuarioController@login'));
 //Route::get('usuario/salir', array('uses' => 'UsuarioController@salir'));
 //Route::group(array('before' => 'auth.login'), function() {});

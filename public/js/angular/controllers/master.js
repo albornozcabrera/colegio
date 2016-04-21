@@ -1,5 +1,5 @@
 app.controller("ctrlMaster", function ($scope, $http) {
-    $('#home').removeClass("active");
+    $('#home').addClass("active");
     $('#about').removeClass("active");
     $('#activity').removeClass("active");
     $('#contacts').removeClass("active");
