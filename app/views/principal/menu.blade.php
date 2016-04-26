@@ -1,45 +1,31 @@
-<nav ng-controller="ctrlMenu" class="navbar navbar-inverse">
-    <div class="container-fluid" ng-controller="ctrlMaster">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li id="home"><?= HTML::link("/", "Principal", array()) ?></li>
-                <li id="about"><?= HTML::link("core/about", "Acerca de Nosotros", array()) ?></li>
-                <li id="activity"><?= HTML::link("core/activity", "Actividades", array()) ?></li>
-                <li id="contacts"><?= HTML::link("core/contacts", "Contáctanos", array()) ?></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::check())
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="cursor: pointer; color: #4CAF50;" aria-expanded="false">{{ Auth::user()->name }} {{ Auth::user()->lastname }} <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('logout') }}">Logout</a></li>
-                            </ul>
-                        </li>                       
-                    @else
-                        @if (Session::has('login_error'))
-                        <li>    
-                            <a id="btnLogin" style="cursor: pointer; color: #E91E63;">
-                                <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
-                            </a>
-                        </li>     
-                        @else
-                        <li>    
-                            <a id="btnLogin" style="cursor: pointer; ">
-                                <span class="glyphicon glyphicon-log-in" id="btnLogin"></span>Login
-                            </a>
-                        </li>      
-                        @endif                            
-                    @endif
-            </ul>
-        </div>
+<nav id="nemu-Master" class="navbar-default navbar-static-side menu-Master" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element"> 
+                    <input id="perfil" type="hidden" value="{{Session::get('usuario.codperfil')}}">
+                    <div class="tittleAdraLogo">
+                        <strong>IESG</strong>
+                    </div>
+                </div>
+                <div class="logo-element">
+                    SG
+                </div>
+            </li>
+            <li class="">
+                <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">CORE Planificación</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><?= HTML::link("core/principal", "Principal", array()) ?></li>
+                    <li><?= HTML::link("/core/mision", "Mision", array()) ?></li>
+                    <li><?= HTML::link("/core/vision", "Vision", array()) ?></li>
+                    <li><?= HTML::link("/core/linea-accion", "Gestión de Líneas de Acción", array()) ?></li>
+                    <li><?= HTML::link("/core/objetivo", "Gestión de Objetivos por Líneas de Acción", array()) ?></li>
+                    <li><?= HTML::link("/core/indicador", "Gestión de Indicadores", array()) ?></li>
+                    <li><?= HTML::link("/core/principal/Reporte", "Reporte", array()) ?></li>
+                    <li><?= HTML::link("/core/principal/Reporte2", "Reporte2", array()) ?></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </nav>
 <div class="modal fade" id="myModal" role="dialog">
@@ -52,7 +38,7 @@
             </div>
             <div class="modal-body">
 
-            {{ Form::open(['route' => 'login', 'method' => 'POST']) }}
+                {{ Form::open(['route' => 'login', 'method' => 'POST']) }}
                 <div class="form-group">
                     <label class="col-md-4 control-label">E-Mail Address</label>
                     <div class="col-md-6">
@@ -82,7 +68,7 @@
                         <a class="btn btn-link" href="#">Forgot Your Password?</a>
                     </div>
                 </div>                
-            {{ Form::close() }}
+                {{ Form::close() }}
 
             </div>
             <div class="modal-footer">

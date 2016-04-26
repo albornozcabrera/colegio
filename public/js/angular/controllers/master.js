@@ -7,4 +7,12 @@ app.controller("ctrlMaster", function ($scope, $http) {
     $("#btnLogin").click(function(){
         $("#myModal").modal();
     });
+    var nameUser = $('#nameUser').text();
+    if(nameUser != ''){
+        console.log('vacío');
+    }else {
+        console.log('nombre: ',nameUser);
+        $("#page-wrapper").addClass('ocultar-Menu');
+        $("#nemu-Master").hide();
+    }
 });
