@@ -1,4 +1,4 @@
-<nav id="nemu-Master" class="navbar-default navbar-static-side menu-Master" role="navigation">
+<nav id="nemu-Master" class="navbar-default navbar-static-side menu-Master" role="navigation" ng-cloak>
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
